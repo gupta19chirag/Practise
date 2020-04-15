@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<conio.h>
+void main(){
+int n,r,s,sum=0;
+printf("Enter the number:");
+scanf("%d",&n);
+while(n>0){
+r = n % 10;// It will provide you the last digit of your number:
+sum = sum + r;
+n = n / 10;// It will remove the last digit means the value we get in r from the number
+}
+printf("%d",sum);
+}
