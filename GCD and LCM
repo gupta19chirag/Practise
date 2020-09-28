@@ -1,0 +1,40 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		if(t>=1 && t<=1000){
+    		while(t-- != 0){
+    		    long a = sc.nextLong();
+    		    long b = sc.nextLong();
+                long val = gcd(a,b);
+                long lcm = (a * b)/val; // lcm is multliplication of two number and the result is divide by gcd
+                
+                System.out.println(val +" "+ lcm);
+    	    }
+		}
+	}
+	public static long gcd(long n1, long n2){
+	    if(n2 == 0){
+	        return n1;
+	    }
+	    else{
+	        return gcd(n2, (n1%n2));
+	    }
+	}
+}
+// Logic for GCD:-
+firstly find the largest of two and assign numerator with largest and denominator with smallest
+now rem = numerator % denominator
+until rem != 0 reapeat the steps below:-
+numerator = denominator;
+denominatr = remainder and remainder = numerator % denominator
+and at last the value of gcd will be the value of denominator;
